@@ -1,17 +1,18 @@
 <?php
-
 if (isset($_POST['valider'])) {
     if (!empty($_POST['admin']) && !empty($_POST['password'])) {
         if ($_POST['admin'] == "admin@" && $_POST['password'] == "1234") {
-            "<a href='clients.php'></a>" ;
+            header("Location: clients.php");
+            exit(); // Ensure no further code is executed after redirection
         } else {
-            echo "verify informations";
+            echo "Verify informations";
         }
     } else {
         echo "Veuillez compléter tous les champs...";
     }
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
